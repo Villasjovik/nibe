@@ -86,7 +86,7 @@ background-image:radial-gradient(circle,rgba(212,168,75,.06) 1px,transparent 1px
 .h-tagline{font-family:'Playfair Display',serif;font-size:clamp(24px,3.8vw,48px);font-weight:400;line-height:1.2;
 max-width:720px;margin-bottom:20px}
 .h-tagline em{font-style:italic;color:var(--gold)}
-.h-sub{font-size:clamp(14px,1.5vw,16px);line-height:1.8;color:var(--muted);max-width:480px;margin-bottom:52px}
+.h-sub{font-size:clamp(14px,1.5vw,16px);line-height:1.8;color:var(--muted);max-width:500px;margin-bottom:52px}
 .h-scroll{display:flex;flex-direction:column;align-items:center;gap:7px;opacity:.7}
 .h-scroll span{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
 .h-line{width:1px;height:44px;background:linear-gradient(180deg,var(--gold),transparent);animation:lb 2s ease-in-out infinite}
@@ -108,7 +108,13 @@ max-width:720px;margin-bottom:20px}
 .forr-orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(212,168,75,.1),transparent);top:-180px;right:-120px;animation:orbf 30s ease-in-out infinite}
 .forr-orb-2{width:450px;height:450px;background:radial-gradient(circle,rgba(0,122,62,.08),transparent);bottom:-120px;left:-100px;animation:orbf 24s ease-in-out infinite reverse}
 .forr-inner{position:relative;z-index:1;max-width:980px;margin:0 auto}
-.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.res-wrap{position:relative;margin-top:48px}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.res-total{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px;
+padding:14px 28px;background:rgba(212,168,75,.07);border:1px solid rgba(212,168,75,.2);
+border-radius:12px;max-width:320px;margin-left:auto;margin-right:auto}
+.res-total span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.res-total strong{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink)}
 .rc{padding:38px 28px;border:1px solid rgba(212,168,75,.18);border-radius:18px;
 background:rgba(255,255,255,.03);text-align:center;position:relative;overflow:hidden;
 transition:border-color .3s,transform .4s var(--ease)}
@@ -119,8 +125,6 @@ background:radial-gradient(circle at 50% 0%,rgba(212,168,75,.07),transparent 70%
 .rc-v{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,72px);font-weight:500;color:var(--gold);line-height:1}
 .rc-lbl{margin-top:8px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .rc-sub{margin-top:6px;font-size:12px;color:rgba(242,237,228,.4);line-height:1.5}
-.rc.yt .rc-v{color:rgba(242,237,228,.35);font-size:clamp(28px,4vw,48px)}
-.rc.yt{border-color:rgba(255,255,255,.06)}
 .forr-insight{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .fi{padding:32px 28px;border-radius:16px;position:relative;overflow:hidden}
 .fi-left{background:rgba(212,168,75,.06);border:1px solid rgba(212,168,75,.2)}
@@ -133,7 +137,7 @@ background:radial-gradient(circle at 50% 0%,rgba(212,168,75,.07),transparent 70%
 .fi-right .fi-label{color:var(--muted)}
 @media(max-width:700px){.res-grid{grid-template-columns:1fr}.forr-insight{grid-template-columns:1fr}}
 
-/* ══ PROFIL — VARFÖR VS ════════════════════════ */
+/* ══ PROFIL ════════════════════════════════════ */
 #sec-profil{position:relative;background:var(--bg2);padding:96px 24px;overflow:hidden}
 .p-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
 .p-orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,122,62,.15),transparent);top:-150px;right:-100px;animation:orbf 28s ease-in-out infinite}
@@ -152,8 +156,9 @@ background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:
 .sc.lit::after{transform:scaleX(1)}
 .sc:hover{background:rgba(212,168,75,.04)}
 .sc-bg{position:absolute;top:-8px;right:6px;font-family:'Playfair Display',serif;font-size:90px;font-weight:700;color:rgba(212,168,75,.05);line-height:1;user-select:none;pointer-events:none}
-.sc-num{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,52px);font-weight:500;color:var(--gold);line-height:1;display:block}
+.sc-num{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,46px);font-weight:500;color:var(--gold);line-height:1;display:block}
 .sc-suf{font-size:.45em;color:var(--warm)}
+.sc-sub{font-size:10px;color:rgba(212,168,75,.5);margin-top:4px;letter-spacing:.06em}
 .sc-lbl{margin-top:8px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .profil-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
 .gc{background:rgba(255,255,255,.045);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
@@ -196,14 +201,11 @@ background:linear-gradient(145deg,var(--brn) 0%,var(--brn2) 50%,var(--brn) 100%)
 display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:52px}
 .rk-lbl::before,.rk-lbl::after{content:'';width:32px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
 .rk-lbl::after{background:linear-gradient(270deg,var(--gold),transparent)}
-
 .rk-hero{margin-bottom:64px}
 .rk-big{font-family:'Playfair Display',serif;font-size:clamp(72px,14vw,160px);font-weight:500;
 color:var(--gold);line-height:.9;display:block;text-shadow:0 0 80px rgba(212,168,75,.25)}
 .rk-big-lbl{font-size:clamp(12px,1.5vw,16px);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:16px}
 .rk-big-lbl strong{color:var(--ink)}
-
-/* Compare table */
 .rk-compare{display:grid;grid-template-columns:1fr 2px 1fr;gap:0;margin:64px 0;
 border:1px solid rgba(212,168,75,.15);border-radius:18px;overflow:hidden}
 .rk-sep{background:linear-gradient(180deg,transparent,rgba(212,168,75,.4) 20%,rgba(212,168,75,.4) 80%,transparent)}
@@ -223,12 +225,11 @@ border:1px solid rgba(212,168,75,.15);border-radius:18px;overflow:hidden}
 .rk-badge{display:inline-block;margin-bottom:20px;padding:4px 14px;
 background:rgba(212,168,75,.12);border:1px solid rgba(212,168,75,.35);border-radius:100px;
 font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-
 .rk-note{margin-top:40px;padding:24px 32px;border-left:2px solid var(--gold);
 background:rgba(212,168,75,.05);border-radius:0 12px 12px 0;text-align:left}
 .rk-note p{font-size:14px;color:var(--muted);line-height:1.75}
 .rk-note strong{color:var(--ink)}
-@media(max-width:700px){.rk-compare{grid-template-columns:1fr}.rk-sep{display:none;height:1px;background:rgba(212,168,75,.3)}}
+@media(max-width:700px){.rk-compare{grid-template-columns:1fr}.rk-sep{height:1px;background:rgba(212,168,75,.3)}}
 
 /* ══ PRICING ════════════════════════════════════ */
 #sec-pr{position:relative;background:var(--bg2);padding:96px 24px;overflow:hidden}
@@ -261,11 +262,11 @@ display:flex;align-items:center;gap:16px;justify-content:center}
 
 /* ══ PARALLAX TEXT ══════════════════════════════ */
 #sec-px{background:#030D07;padding:110px 0;overflow:hidden;position:relative}
-.px-row{font-family:'Playfair Display',serif;font-size:clamp(44px,7.5vw,100px);
+.px-row{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,56px);
 font-weight:400;line-height:1;white-space:nowrap;will-change:transform;margin-bottom:10px}
 .px-row.go{color:var(--gold)}
 .px-row.ou{color:transparent;-webkit-text-stroke:1px rgba(212,168,75,.42)}
-.px-row.dm{color:rgba(242,237,228,.06)}
+.px-row.dm{color:rgba(242,237,228,.07)}
 .px-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
 z-index:2;pointer-events:none;text-align:center;padding:0 24px}
 .px-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
@@ -283,7 +284,9 @@ background-image:radial-gradient(circle,rgba(212,168,75,.06) 1px,transparent 1px
 .cta-orb-2{width:450px;height:450px;background:radial-gradient(circle,rgba(212,168,75,.12),transparent);top:-120px;left:-80px;animation:orbf 18s ease-in-out infinite;animation-delay:-11s}
 .cta-inner{position:relative;z-index:1;padding:80px 24px}
 .cta-tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
-#sec-cta h2{font-family:'Playfair Display',serif;font-size:clamp(40px,8vw,110px);font-weight:400;line-height:.95;margin-bottom:32px}
+#sec-cta h2{font-family:'Playfair Display',serif;font-weight:400;line-height:1.0;margin-bottom:32px}
+#sec-cta .cta-l1{font-size:clamp(40px,7vw,100px)}
+#sec-cta .cta-l2{font-size:clamp(52px,9.5vw,140px)}
 #sec-cta h2 em{font-style:italic;color:var(--gold)}
 .cta-sub{font-size:15px;color:var(--muted);max-width:380px;margin:0 auto 48px;line-height:1.8}
 .mag-w{display:inline-block}
@@ -299,6 +302,8 @@ position:relative;overflow:hidden;transition:color .35s}
 .cta-con{margin-top:26px}
 .cta-name{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:6px}
 .cta-det{font-size:12px;color:var(--muted);letter-spacing:.06em;line-height:1.9}
+.cta-det a{color:var(--muted);text-decoration:none;transition:color .2s}
+.cta-det a:hover{color:var(--gold)}
 
 /* REVEAL */
 .body-loaded .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -307,7 +312,7 @@ position:relative;overflow:hidden;transition:color .35s}
 .body-loaded .rv.d3{transition-delay:.3s}.body-loaded .rv.d4{transition-delay:.4s}
 
 /* WORD SPLIT */
-.ws .w{display:inline-block;overflow:hidden;vertical-align:bottom}
+.ws .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.12em;margin-bottom:-.12em}
 .ws .w i{display:block;font-style:inherit;transform:translateY(108%);transition:transform .85s var(--ease)}
 .ws.in .w i{transform:translateY(0)}
 
@@ -357,8 +362,8 @@ position:relative;overflow:hidden;transition:color .35s}
       <span class="h-x">×</span>
       <img class="h-ni" src="https://www.nibe.eu/images/18.6394f9d91836c36799c18b7/1716537072922/nibe-logo-web.svg" alt="Nibe"/>
     </div>
-    <h1 class="h-tagline">Vi installerade er värmepanna.<br><em>Nu berättar vi om den — för tre gånger fler.</em></h1>
-    <p class="h-sub">Förra samarbetet gav 50 000+ visningar. Samma berättelse, egna kanaler, 15 000 kr Meta Ads — och vi siktar på 150 000.</p>
+    <h1 class="h-tagline">Vi installerade er värmepump.<br><em>Nu berättar vi om den — för tre gånger fler.</em></h1>
+    <p class="h-sub">Förra samarbetet gav 60 000+ visningar. Samma berättelse, egna kanaler, 164k Instagram + 30k Facebook — och 15 000 kr Meta Ads ovanpå. Vi siktar på 150 000.</p>
     <div class="h-scroll" aria-hidden="true">
       <span>Utforska</span>
       <div class="h-line"></div>
@@ -372,21 +377,21 @@ position:relative;overflow:hidden;transition:color .35s}
 <div id="sec-mq" aria-hidden="true">
   <div class="mq-track">
     <div class="mq-item"><span class="mq-t g">150 000 visningar</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">3 Reels · 6 Stories</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t">3 Reels · 6 Stories · 3 veckor</span><div class="mq-dot"></div></div>
     <div class="mq-item"><span class="mq-t g">Villa Sjövik × Nibe 2026</span><div class="mq-dot"></div></div>
     <div class="mq-item"><span class="mq-t">Äkta installation. Äkta berättelse.</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">3× mer räckvidd än förra gången</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">VS producerar allt</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">164 000 husägare</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t g">3× mer räckvidd än 2025</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t">Villa Sjövik producerar allt</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t g">164k Instagram · 30k Facebook</span><div class="mq-dot"></div></div>
     <div class="mq-item"><span class="mq-t">Berättelsen fortsätter</span><div class="mq-dot"></div></div>
     <!-- duplicate -->
     <div class="mq-item"><span class="mq-t g">150 000 visningar</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">3 Reels · 6 Stories</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t">3 Reels · 6 Stories · 3 veckor</span><div class="mq-dot"></div></div>
     <div class="mq-item"><span class="mq-t g">Villa Sjövik × Nibe 2026</span><div class="mq-dot"></div></div>
     <div class="mq-item"><span class="mq-t">Äkta installation. Äkta berättelse.</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">3× mer räckvidd än förra gången</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">VS producerar allt</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">164 000 husägare</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t g">3× mer räckvidd än 2025</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t">Villa Sjövik producerar allt</span><div class="mq-dot"></div></div>
+    <div class="mq-item"><span class="mq-t g">164k Instagram · 30k Facebook</span><div class="mq-dot"></div></div>
     <div class="mq-item"><span class="mq-t">Berättelsen fortsätter</span><div class="mq-dot"></div></div>
   </div>
 </div>
@@ -399,22 +404,28 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="forr-orb forr-orb-2" aria-hidden="true"></div>
   <div class="forr-inner">
     <p class="sec-lbl rv">Vintern 2025 — vi samarbetade redan</p>
-    <h2 class="sec-h2 ws rv">Ni producerade. Vi publicerade.<br><em>50 000+ visningar.</em></h2>
-    <div class="res-grid">
-      <div class="rc rv d1">
-        <p class="rc-v"><span class="cu" data-v="30" data-sep="">0</span>k</p>
-        <p class="rc-lbl">visningar</p>
-        <p class="rc-sub">Reel 1 — installationen<br>@villasjovik</p>
+    <h2 class="sec-h2 ws rv">Ni producerade. Vi publicerade.<br><em>60 000+ visningar.</em></h2>
+    <div class="res-wrap">
+      <div class="res-grid">
+        <div class="rc rv d1">
+          <p class="rc-v"><span class="cu" data-v="30">0</span>k</p>
+          <p class="rc-lbl">visningar</p>
+          <p class="rc-sub">Reel 1 — installationen<br>@villasjovik</p>
+        </div>
+        <div class="rc rv d2">
+          <p class="rc-v"><span class="cu" data-v="10">0</span>k</p>
+          <p class="rc-lbl">visningar</p>
+          <p class="rc-sub">Reel 2 — intervju<br>@villasjovik</p>
+        </div>
+        <div class="rc rv d3">
+          <p class="rc-v"><span class="cu" data-v="10">0</span>k</p>
+          <p class="rc-lbl">visningar</p>
+          <p class="rc-sub">Reel 3 — bakom kulisserna<br>@villasjovik</p>
+        </div>
       </div>
-      <div class="rc rv d2">
-        <p class="rc-v"><span class="cu" data-v="10" data-sep="">0</span>k</p>
-        <p class="rc-lbl">visningar</p>
-        <p class="rc-sub">Reel 2 — intervju<br>@villasjovik</p>
-      </div>
-      <div class="rc rv d3">
-        <p class="rc-v"><span class="cu" data-v="10" data-sep="">0</span>k</p>
-        <p class="rc-lbl">visningar</p>
-        <p class="rc-sub">Reel 3 — bakom kulisserna<br>@villasjovik</p>
+      <div class="res-total rv">
+        <span>Totalt på Instagram</span>
+        <strong>~60 000+ visningar</strong>
       </div>
     </div>
 
@@ -422,12 +433,12 @@ position:relative;overflow:hidden;transition:color .35s}
       <div class="fi fi-left">
         <p class="fi-label">Slutsatsen</p>
         <h4>Carins kanaler är rätt plattform för Nibe.</h4>
-        <p>De tre Reelarna publicerade på @villasjovik samlade totalt 50 000+ visningar organiskt — utan annonsbudget. Innehållet landade bra för att det var äkta: en riktig installation, i ett riktigt hem, berättad av någon publiken litar på.</p>
+        <p>De tre Reelarna publicerade på @villasjovik samlade totalt 60 000+ visningar organiskt — utan annonsbudget. Innehållet landade bra för att det var äkta: en riktig installation, i ett riktigt hem, berättad av någon publiken litar på.</p>
       </div>
       <div class="fi fi-right">
-        <p class="fi-label">Jämförelse</p>
-        <h4>Huvudfilmen på YouTube: 210 visningar.</h4>
-        <p>Samma produktion. Samma berättelse. Fel kanal. Det visar tydligt var Nibes målgrupp faktiskt befinner sig — och det är i Carins flöde, inte på YouTube. Den insikten är grunden för det här förslaget.</p>
+        <p class="fi-label">Vad vi gör annorlunda nu</p>
+        <h4>Villa Sjövik producerar och redigerar allt.</h4>
+        <p>Förra gången koordinerade Nibe ett externt filmteam och filmade installatörerna. Den här gången tar Villa Sjövik hela produktionen — ni levererar värmepumpen och annonsbudgeten. Vi levererar tre skräddarsydda videos, redigerade och klara för publicering.</p>
       </div>
     </div>
   </div>
@@ -435,28 +446,29 @@ position:relative;overflow:hidden;transition:color .35s}
 
 <div class="gd"></div>
 
-<!-- ══ PROFIL — VARFÖR VS ════════════════════════════ -->
+<!-- ══ PROFIL ════════════════════════════════════════ -->
 <section id="sec-profil">
   <div class="p-orb p-orb-1" aria-hidden="true"></div>
   <div class="p-orb p-orb-2" aria-hidden="true"></div>
   <div class="sec-inner">
     <p class="sec-lbl rv">Kanalen och publiken</p>
-    <h2 class="sec-h2 ws rv">Värmepannan sitter redan.<br><em>Publiken litar redan.</em></h2>
+    <h2 class="sec-h2 ws rv">Värmepumpen sitter redan.<br><em>Publiken litar redan.</em></h2>
     <div class="stats-grid">
       <div class="sc rv d1">
         <div class="sc-bg" aria-hidden="true">164</div>
         <span class="sc-num"><span class="cu" data-v="164">0</span><span class="sc-suf">k</span></span>
+        <p class="sc-sub">+ 30k Facebook</p>
         <p class="sc-lbl">Instagram följare</p>
       </div>
       <div class="sc rv d2">
-        <div class="sc-bg" aria-hidden="true">30</div>
-        <span class="sc-num"><span class="cu" data-v="30">0</span><span class="sc-suf">k</span></span>
-        <p class="sc-lbl">Facebook följare</p>
-      </div>
-      <div class="sc rv d3">
         <div class="sc-bg" aria-hidden="true">194</div>
         <span class="sc-num"><span class="cu" data-v="194">0</span><span class="sc-suf">k</span></span>
         <p class="sc-lbl">Total räckvidd</p>
+      </div>
+      <div class="sc rv d3">
+        <div class="sc-bg" aria-hidden="true">60k</div>
+        <span class="sc-num"><span class="cu" data-v="60">0</span><span class="sc-suf">k</span></span>
+        <p class="sc-lbl">Visningar — förra kampanjen</p>
       </div>
       <div class="sc rv d4">
         <div class="sc-bg" aria-hidden="true">Hem</div>
@@ -467,19 +479,19 @@ position:relative;overflow:hidden;transition:color .35s}
     <div class="profil-grid">
       <div class="gc rv d1">
         <h3>Äkta installation — inte en demo</h3>
-        <p>Nibes värmepanna sitter i Carins hus. Det är inte ett sponsrat showroom — det är ett riktigt hem med ett riktigt driftsresultat. Det är en trovärdighet ingen annons kan köpa, men som vi kan förstärka med rätt berättelse och rätt distribution.</p>
+        <p>Nibes värmepump sitter i Carins hus. Det är inte ett sponsrat showroom — det är ett riktigt hem med ett riktigt driftsresultat. Det är en trovärdighet ingen annons kan köpa, men som vi kan förstärka med rätt berättelse och rätt distribution.</p>
       </div>
       <div class="gc rv d2">
         <h3>Husägare i rätt beslutsskede</h3>
         <p>Carins följare är mitt i sitt husägerliv — renovering, energieffektivisering, framtidsplanering. Det är exakt den person som söker information om värmepumpar. Vi når dem i rätt sinnesstämning, med en rekommendation från någon de litar på.</p>
       </div>
       <div class="gc rv d3">
-        <h3>3 Reels, 3 dagar — organisk känsla</h3>
-        <p>En Reel per dag under tre dagar upplevs som en naturlig berättelse, inte ett reklamblock. Varje publicering driver räckvidd för nästa. Det bygger momentum och ger algoritmen tid att arbeta — tre chanser att nå rätt person.</p>
+        <h3>En Reel i veckan — i tre veckor</h3>
+        <p>Tre videos publicerade med en veckas mellanrum upplevs som en naturlig och levande berättelse. Varje Reel driver organisk räckvidd och bygger intresse inför nästa. Det ger algoritmen tid att arbeta — och publiken tid att följa med i historien.</p>
       </div>
       <div class="gc rv d4">
-        <h3>VS producerar allt</h3>
-        <p>Förra gången hyrde Nibe in ett filmteam och koordinerade installation med Walthers. Den här gången tar Villa Sjövik hand om hela produktionen. Ni levererar värmepannan och annonsbudgeten — vi levererar resten.</p>
+        <h3>Villa Sjövik producerar allt</h3>
+        <p>Förra gången koordinerade Nibe ett externt filmteam. Den här gången tar Villa Sjövik hela produktionen. Ni levererar värmepumpen och annonsbudgeten — vi levererar manus, filmning, redigering och publicering i tre välproducerade videos.</p>
       </div>
     </div>
   </div>
@@ -492,28 +504,28 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="lev-orb lev-orb-1" aria-hidden="true"></div>
   <div class="lev-inner">
     <p class="sec-lbl rv">Vad som ingår</p>
-    <h2 class="sec-h2 ws rv">Tre dagar. Tre Reels.<br><em>150 000 visningar.</em></h2>
+    <h2 class="sec-h2 ws rv">Tre Reels. Tre veckor.<br><em>150 000 visningar.</em></h2>
     <div class="lev-grid">
       <div class="lc rv d1">
         <div class="lc-n" aria-hidden="true">3</div>
         <svg class="lc-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-        <h3>3 Reels — 1 per dag</h3>
-        <p>Villa Sjövik producerar, redigerar och publicerar tre Reels under tre på varandra följande dagar. UGC-stil — naturlig, trovärdig, i Carins röst. Varje klipp driftsätts separat för att maximera algoritmens spridning och hålla engagemanget levande.</p>
-        <span class="lc-tag">Produktion &amp; redigering inkluderat</span>
+        <h3>3 skräddarsydda Reels</h3>
+        <p>Vi börjar med ett uppföljningsmöte där Nibe delar vad de vill ha med — en lista, ett manusunderlag, eller bara en känsla. Villa Sjövik skräddarsyr de tre videosen och tar fram ett slutgiltigt manus, alternativt använder Nibes eget om de föredrar det. Vi filmar under installationsdagen och producerar eget material med Carin. Klart material skickas för granskning — ni ger input, vi justerar. Är ni inte nöjda betalar ni inte. Ni har alltid anlitat kamerateam för att säkra kvaliteten — det här är vår hemmaplan.</p>
+        <span class="lc-tag">En Reel per vecka · 3 veckor</span>
       </div>
       <div class="lc rv d2">
         <div class="lc-n" aria-hidden="true">6</div>
         <svg class="lc-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 8 12 12 14 14"></polyline></svg>
         <h3>6 Stories med CTA</h3>
-        <p>Varje dag kompletteras Reelen med 2 publika Stories med tydlig uppmaning och direktlänk till Nibes expertkontakt. Det är det format som driver faktiska klick — kort, direkt, i rätt ögonblick precis efter att tittaren sett filmen.</p>
+        <p>Veckan varje Reel publiceras kompletteras den med 2 publika Stories med tydlig uppmaning och direktlänk till Nibes expertkontakt. Det är det format som driver faktiska klick — kort, direkt, och i rätt ögonblick precis efter att tittaren sett filmen.</p>
         <span class="lc-tag">Direktlänk → Nibe expert</span>
       </div>
       <div class="lc rv d3">
         <div class="lc-n" aria-hidden="true">15k</div>
         <svg class="lc-icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
         <h3>15 000 kr Meta Ads</h3>
-        <p>Vi förstärker Reelarna med riktad annonsering mot husägare i Sverige. Annonsbudgeten hanteras av Villa Sjövik — ni behöver inte logga in i Ads Manager. Vi kör tills vi nått målvolymen och optimerar fördelningen mellan klippen löpande.</p>
-        <span class="lc-tag">Hanteras av VS — inga dolda avgifter</span>
+        <p>Vi förstärker Reelarna med riktad annonsering mot husägare i Sverige. Annonsbudgeten hanteras av Villa Sjövik — ni behöver inte logga in i Ads Manager. Vi optimerar annonsfördelningen löpande mellan de tre Reelarna för att maximera exponeringen.</p>
+        <span class="lc-tag">Hanteras av Villa Sjövik</span>
       </div>
     </div>
   </div>
@@ -536,13 +548,12 @@ position:relative;overflow:hidden;transition:color .35s}
     <div class="rk-compare rv">
       <div class="rk-col">
         <p class="rk-col-lbl">Förra kampanjen — vintern 2025</p>
-        <p class="rk-col-num">~50k</p>
+        <p class="rk-col-num">~60k</p>
         <div class="rk-rows">
-          <p class="rk-row">Nibes filmteam + Walthers on-site</p>
+          <p class="rk-row">Nibes filmteam on-site</p>
           <p class="rk-row">3 videos publicerade via @villasjovik</p>
           <p class="rk-row">Ingen Meta Ads-boost</p>
           <p class="rk-row">Organisk räckvidd på befintliga följare</p>
-          <p class="rk-row">YouTube: 210 visningar (huvudfilm)</p>
         </div>
       </div>
       <div class="rk-sep" aria-hidden="true"></div>
@@ -551,17 +562,17 @@ position:relative;overflow:hidden;transition:color .35s}
         <p class="rk-col-lbl">Den här kampanjen</p>
         <p class="rk-col-num">~150k</p>
         <div class="rk-rows">
-          <p class="rk-row">VS producerar &amp; redigerar allt</p>
-          <p class="rk-row">3 Reels + 6 Stories — tre dagar i rad</p>
-          <p class="rk-row">15 000 kr Meta Ads på husägare</p>
+          <p class="rk-row">Villa Sjövik producerar &amp; redigerar allt</p>
+          <p class="rk-row">3 Reels + 6 Stories — en per vecka, 3 veckor</p>
+          <p class="rk-row">15 000 kr Meta Ads mot husägare</p>
           <p class="rk-row">Organiskt + betalt = multiplicerad effekt</p>
-          <p class="rk-row">Ni levererar värmepannan — vi resten</p>
+          <p class="rk-row">Ni levererar värmepumpen — Villa Sjövik resten</p>
         </div>
       </div>
     </div>
 
     <div class="rk-note rv">
-      <p>Förra gången fick ni 50 000+ visningar utan annonsbudget och med externt filmteam. Nu tillkommer <strong>15 000 kr Meta Ads</strong> riktade mot husägare, och Villa Sjövik tar hela produktionen. Effekten är konservativt uppskattad till <strong>tre gånger förra kampanjens räckvidd</strong> — och berättelsen är starkare än någonsin: ni har en nöjd kund med ett år av drifterfarenhet.</p>
+      <p>Förra gången fick ni 60 000+ visningar utan annonsbudget och med externt filmteam. Nu tillkommer <strong>15 000 kr Meta Ads</strong> riktade mot husägare, och Villa Sjövik tar hela produktionen. Effekten är konservativt uppskattad till <strong>tre gånger förra kampanjens räckvidd</strong> — och berättelsen är starkare än någonsin: ni har en nöjd kund med ett år av drifterfarenhet.</p>
     </div>
   </div>
 </section>
@@ -570,9 +581,9 @@ position:relative;overflow:hidden;transition:color .35s}
 
 <!-- ══ PARALLAX TEXT ════════════════════════════════ -->
 <section id="sec-px" aria-label="Citat">
-  <div id="px1" class="px-row go">50 000 förra gången. 150 000 nu.&nbsp;&nbsp;&nbsp;50 000 förra gången. 150 000 nu.&nbsp;&nbsp;&nbsp;50 000 förra gången. 150 000 nu.&nbsp;&nbsp;&nbsp;</div>
+  <div id="px1" class="px-row go">60 000 förra gången. 150 000 nu.&nbsp;&nbsp;&nbsp;60 000 förra gången. 150 000 nu.&nbsp;&nbsp;&nbsp;60 000 förra gången. 150 000 nu.&nbsp;&nbsp;&nbsp;60 000 förra gången. 150 000 nu.&nbsp;&nbsp;&nbsp;</div>
   <div id="px2" class="px-row ou">Äkta installation. Äkta berättelse.&nbsp;&nbsp;&nbsp;Äkta installation. Äkta berättelse.&nbsp;&nbsp;&nbsp;Äkta installation. Äkta berättelse.&nbsp;&nbsp;&nbsp;</div>
-  <div id="px3" class="px-row dm">Villa Sjövik × Nibe — fortsättningen.&nbsp;&nbsp;&nbsp;Villa Sjövik × Nibe — fortsättningen.&nbsp;&nbsp;&nbsp;</div>
+  <div id="px3" class="px-row dm">Villa Sjövik × Nibe — fortsättningen.&nbsp;&nbsp;&nbsp;Villa Sjövik × Nibe — fortsättningen.&nbsp;&nbsp;&nbsp;Villa Sjövik × Nibe — fortsättningen.&nbsp;&nbsp;&nbsp;</div>
   <div class="px-mid">
     <p class="px-tag">Villa Sjövik × Nibe 2026</p>
     <h2 class="px-hl">Bevisat. Skalbart.<br><em>Redo att köra.</em></h2>
@@ -586,7 +597,7 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="pr-orb pr-orb-1" aria-hidden="true"></div>
   <div class="pr-inner">
     <p class="sec-lbl rv" style="justify-content:center">Investering</p>
-    <h2 class="sec-h2 ws rv" style="text-align:center">Ni levererar pannan.<br><em>Vi levererar resten.</em></h2>
+    <h2 class="sec-h2 ws rv" style="text-align:center">Ni levererar pumpen.<br><em>Vi levererar resten.</em></h2>
     <div class="price-box rv">
       <p class="price-total-lbl">Kontant investering</p>
       <p class="price-total">45 000 <span class="price-unit">kr exkl. moms</span></p>
@@ -600,21 +611,21 @@ position:relative;overflow:hidden;transition:color .35s}
           <p class="pb-lbl">Meta Ads<br>annonsbudget</p>
         </div>
         <div class="pb">
-          <span class="pb-num" style="font-size:16px;padding-top:4px">Värmepannan</span>
-          <p class="pb-lbl">Nibe & Walthers<br>befintlig relation</p>
+          <span class="pb-num" style="font-size:16px;padding-top:4px">Värmepumpen</span>
+          <p class="pb-lbl">Bekostas av<br>Nibe</p>
         </div>
       </div>
       <div class="price-includes">
-        <p class="pi hi">3 Reels producerade och publicerade av Villa Sjövik (@villasjovik, 164k)</p>
-        <p class="pi hi">6 Stories med direktlänk till Nibes expertkontakt (2/dag i 3 dagar)</p>
-        <p class="pi hi">15 000 kr Meta Ads mot husägare i Sverige — hanteras av VS</p>
-        <p class="pi">Strategi, produktion, redigering och annonshantering inkluderat</p>
+        <p class="pi hi">3 skräddarsydda Reels producerade och publicerade av Villa Sjövik (@villasjovik, 164k + 30k)</p>
+        <p class="pi hi">6 Stories med direktlänk till Nibes expertkontakt (2 per vecka, 3 veckor)</p>
+        <p class="pi hi">15 000 kr Meta Ads mot husägare i Sverige — hanteras av Villa Sjövik</p>
+        <p class="pi">Uppföljningsmöte · manus · filmning · redigering · granskning · justeringar</p>
         <p class="pi">Full nyttjanderätt för Nibe på allt producerat material</p>
         <p class="pi">Inga dolda kostnader — fast pris</p>
       </div>
       <div class="guarantee-bar">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        <p>Vi siktar på <span>minst 100 000 visningar</span> — och justerar annonsfördelningen för att maximera räckvidden.</p>
+        <p>Vi siktar på <span>minst 150 000 visningar</span> — 3× större kampanj än 2025.</p>
       </div>
     </div>
   </div>
@@ -629,18 +640,21 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
   <div class="cta-inner">
     <p class="cta-tag">Fortsättningen väntar</p>
-    <h2><div class="ws"><div class="w"><i>Vi kör det</i></div></div><br><div class="ws"><div class="w"><i><em>igen — men större.</em></i></div></div></h2>
+    <h2>
+      <div class="ws cta-l1"><div class="w"><i>Vi kör det igen</i></div></div><br>
+      <div class="ws cta-l2"><div class="w"><i><em>men större.</em></i></div></div>
+    </h2>
     <p class="cta-sub">Intresserade av att ta det vidare? Hör av er så pratar vi detaljer.</p>
     <div class="mag-w" id="mag-w">
-      <a href="mailto:kontakt@villasjovik.se" class="mag-btn" id="mag-btn">
+      <a href="mailto:carin@villasjovik.se" class="mag-btn" id="mag-btn">
         <span>Kontakta Carin</span>
       </a>
     </div>
     <div class="cta-div" aria-hidden="true"></div>
     <div class="cta-con">
       <p class="cta-name">Carin Norberg — Villa Sjövik</p>
-      <p class="cta-det">kontakt@villasjovik.se · 070–65 66 596</p>
-      <p class="cta-det">@villasjovik · villasjovik.se</p>
+      <p class="cta-det">carin@villasjovik.se · 070–65 66 596</p>
+      <p class="cta-det"><a href="https://www.instagram.com/villasjovik/" target="_blank" rel="noopener">@villasjovik</a> · villasjovik.se</p>
     </div>
   </div>
 </section>
@@ -685,12 +699,10 @@ function animHero(){
 
 /* GSAP */
 if(typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined'){
-  /* Velocity skew */
   ScrollTrigger.create({onUpdate:()=>{
     gsap.to(document.body,{skewY:Math.min(Math.max(ScrollTrigger.getVelocity()/-400,-6),6),duration:.5,overwrite:true});
   }});
 
-  /* Parallax */
   const pxT={trigger:'#sec-px',start:'top bottom',end:'bottom top'};
   gsap.to('#px1',{x:-130,ease:'none',scrollTrigger:{...pxT,scrub:.8}});
   gsap.to('#px2',{x: 110,ease:'none',scrollTrigger:{...pxT,scrub:1.1}});
@@ -698,7 +710,6 @@ if(typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined'){
   gsap.fromTo(['.px-tag','.px-hl'],{opacity:0,y:14},{opacity:1,y:0,duration:.9,stagger:.12,ease:'power3.out',
     scrollTrigger:{trigger:'#sec-px',start:'top 62%'}});
 
-  /* CTA */
   ScrollTrigger.create({trigger:'#sec-cta',start:'top 65%',onEnter:()=>{
     gsap.fromTo('.cta-tag',{opacity:0,y:10},{opacity:1,y:0,duration:.7});
     gsap.fromTo('.cta-sub',{opacity:0},{opacity:1,duration:.7,delay:.3});
@@ -706,7 +717,6 @@ if(typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined'){
     document.querySelectorAll('#sec-cta .ws').forEach(el=>el.classList.add('in'));
   }});
 
-  /* Magnetic */
   const mw=document.getElementById('mag-w'),mb=document.getElementById('mag-btn');
   if(mw&&mb){
     mw.addEventListener('mousemove',e=>{
@@ -733,12 +743,13 @@ if(typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined'){
 });
 
 /* SPOTLIGHT */
-['#sec-profil','#sec-forr'].forEach(id=>{
-  const el=document.getElementById(id.slice(1));
+['sec-profil','sec-forr'].forEach(id=>{
+  const el=document.getElementById(id);
   if(!el) return;
+  const base=id==='sec-profil'?'var(--bg2)':'var(--brn)';
   el.addEventListener('mousemove',e=>{
     const r=e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.background=`radial-gradient(circle 600px at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(0,122,62,.06), transparent 70%), ${id==='#sec-profil'?'var(--bg2)':'var(--brn)'}`;
+    e.currentTarget.style.background=`radial-gradient(circle 600px at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(0,122,62,.06), transparent 70%), ${base}`;
   });
   el.addEventListener('mouseleave',e=>{e.currentTarget.style.background=''});
 });
@@ -747,7 +758,7 @@ if(typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined'){
 const cuObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(!e.isIntersecting) return;
-    const el=e.target,end=+el.dataset.v,sep=el.dataset.sep!==undefined,dur=1500,t0=performance.now();
+    const el=e.target,end=+el.dataset.v,sep='sep' in el.dataset,dur=1500,t0=performance.now();
     (function tick(now){
       const p=Math.min((now-t0)/dur,1),ease=1-Math.pow(1-p,3),val=Math.round(ease*end);
       el.textContent=sep?val.toLocaleString('sv-SE'):val;
