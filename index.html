@@ -82,7 +82,7 @@ background-image:radial-gradient(circle,rgba(212,168,75,.06) 1px,transparent 1px
 .h-content{position:relative;z-index:2;padding:80px 24px;display:flex;flex-direction:column;align-items:center}
 .h-eyebrow{font-size:10px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:40px}
 .h-lockup{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
-.h-vs{height:clamp(52px,8vw,100px);object-fit:contain;filter:drop-shadow(0 0 20px rgba(1,142,71,.35))}
+.h-vs{height:clamp(52px,8vw,100px);object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 0 20px rgba(1,142,71,.35))}
 .h-x{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(36px,5.5vw,64px);color:var(--gold);line-height:1}
 .h-ni{height:clamp(28px,3.5vw,46px);object-fit:contain;opacity:1}
 .h-tagline{font-family:'Playfair Display',serif;font-size:clamp(24px,3.8vw,48px);font-weight:400;line-height:1.2;
@@ -174,10 +174,11 @@ background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:
 .sc-sub{font-size:10px;color:rgba(212,168,75,.5);margin-top:4px;letter-spacing:.06em}
 .sc-lbl{margin-top:8px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .profil-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}
-.gc{background:rgba(255,255,255,.045);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.09);border-top:1px solid rgba(212,168,75,.2);border-radius:18px;
-padding:36px 32px;transition:border-color .3s,box-shadow .3s,transform .35s var(--ease)}
-.gc:hover{border-color:rgba(212,168,75,.35);box-shadow:0 24px 60px rgba(0,0,0,.3);transform:translateY(-4px)}
+.gc{background:rgba(212,168,75,.045);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+border:1px solid rgba(212,168,75,.22);border-top:2px solid rgba(212,168,75,.45);border-radius:18px;
+padding:36px 32px;transition:border-color .3s,box-shadow .3s,transform .35s var(--ease);
+box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.gc:hover{border-color:rgba(212,168,75,.5);box-shadow:0 24px 60px rgba(0,0,0,.3);transform:translateY(-4px)}
 .gc h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;margin-bottom:12px}
 .gc p{font-size:14px;line-height:1.85;color:var(--muted)}
 @media(max-width:700px){.stats-grid{grid-template-columns:repeat(2,1fr)}.sc:nth-child(2){border-right:none}.sc{border-bottom:1px solid rgba(212,168,75,.1)}.sc:nth-child(3),.sc:nth-child(4){border-bottom:none}.profil-grid{grid-template-columns:1fr}}
@@ -394,7 +395,7 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
       <span class="h-x">×</span>
       <img class="h-ni" src="./nibe-logo.svg" alt="NIBE"/>
     </div>
-    <h1 class="h-tagline">Vi installerade er värmepump.<br><em>Nu visar vi den — för 150 000 husägare.</em></h1>
+    <h1 class="h-tagline">Installera er värmepump i Villa Sjövik.<br><em>Vi visar den — för 150 000 husägare.</em></h1>
     <div class="h-scroll" aria-hidden="true">
       <span>Utforska</span>
       <div class="h-line"></div>
@@ -583,7 +584,7 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
   <div class="pr-orb pr-orb-1" aria-hidden="true"></div>
   <div class="pr-inner">
     <p class="sec-lbl rv" style="justify-content:center">Investering</p>
-    <h2 class="sec-h2 ws rv" style="text-align:center">Ni levererar pumpen.<br><em>Vi levererar resten.</em></h2>
+    <h2 class="sec-h2 ws rv" style="text-align:center">Ni levererar pumpen.<br><em>Jag levererar resten.</em></h2>
     <div class="price-box rv">
       <p class="price-total-lbl">Kontant investering</p>
       <p class="price-total">50 000 <span class="price-unit">kr exkl. moms</span></p>
@@ -607,7 +608,6 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
         <p class="pi hi">15 000 kr Meta Ads mot husägare i Sverige — hanteras av Villa Sjövik</p>
         <p class="pi">Uppföljningsmöte · manus · filmning · redigering · granskning · justeringar</p>
         <p class="pi">Full nyttjanderätt för NIBE på allt producerat material</p>
-        <p class="pi">Inga dolda kostnader — fast pris</p>
       </div>
       <div class="guarantee-bar">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
