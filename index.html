@@ -94,28 +94,25 @@ max-width:720px;margin-bottom:20px}
 .h-line{width:1px;height:44px;background:linear-gradient(180deg,var(--gold),transparent);animation:lb 2s ease-in-out infinite}
 @keyframes lb{0%,100%{transform:scaleY(1);opacity:.7}50%{transform:scaleY(.55);opacity:1}}
 
-/* ══ MARQUEE ═══════════════════════════════════ */
+/* ══ PARTNERS TICKER ════════════════════════════ */
 #sec-mq{
-  background:radial-gradient(ellipse 80% 120% at 50% 50%,#021508 0%,#010C05 100%);
-  border-top:1px solid rgba(212,168,75,.3);
-  border-bottom:1px solid rgba(212,168,75,.3);
-  padding:26px 0;overflow:hidden;position:relative
+  background:#EDE8DC;
+  border-top:2px solid rgba(212,168,75,.45);
+  border-bottom:2px solid rgba(212,168,75,.45);
+  padding:28px 0 36px;overflow:hidden;position:relative
 }
 #sec-mq::before{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:linear-gradient(90deg,#010C05 0%,transparent 9%,transparent 91%,#010C05 100%)
+  background:linear-gradient(90deg,#EDE8DC 0%,transparent 10%,transparent 90%,#EDE8DC 100%)
 }
-#sec-mq::after{
-  content:'';position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:1px;
-  background:linear-gradient(90deg,transparent,rgba(212,168,75,.1) 20%,rgba(212,168,75,.22) 50%,rgba(212,168,75,.1) 80%,transparent);
-  pointer-events:none;z-index:1
-}
-.mq-track{display:flex;align-items:center;width:max-content;animation:mqs 24s linear infinite;will-change:transform;position:relative;z-index:3}
-.mq-track:hover{animation-play-state:paused}
-.mq-item{display:flex;align-items:center;gap:26px;padding:0 26px;white-space:nowrap}
-.mq-t{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.2vw,30px);color:rgba(242,237,228,.38);letter-spacing:.01em}
-.mq-t.g{color:var(--gold);text-shadow:0 0 30px rgba(212,168,75,.45)}
-.mq-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.38;flex-shrink:0}
+.mq-head{text-align:center;padding-bottom:20px;position:relative;z-index:3}
+.mq-lbl{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(24,19,15,.45);font-weight:600}
+.ticker-wrap{overflow:hidden;position:relative;z-index:3}
+.ticker-track{display:flex;align-items:center;width:max-content;animation:mqs 44s linear infinite;will-change:transform}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{width:160px;height:60px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:0 24px}
+.ticker-logo{width:100%;height:36px;object-fit:contain;opacity:.7;transition:opacity .3s;display:block}
+.ticker-item:hover .ticker-logo{opacity:1}
 @keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ══ FÖRRA SAMARBETET ══════════════════════════ */
@@ -277,7 +274,7 @@ display:flex;align-items:center;gap:16px;justify-content:center}
 @media(max-width:650px){.price-breakdown{grid-template-columns:1fr}.price-box{padding:36px 24px}}
 
 /* ══ PARALLAX TEXT ══════════════════════════════ */
-#sec-px{background:#030D07;padding:160px 0;overflow:hidden;position:relative;min-height:420px}
+#sec-px{background:radial-gradient(ellipse 90% 80% at 50% 50%,var(--bg3) 0%,var(--bg) 70%);padding:160px 0;overflow:hidden;position:relative;min-height:420px}
 .px-row{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,56px);
 font-weight:400;line-height:1;white-space:nowrap;will-change:transform;margin-bottom:40px}
 .px-row.go{color:var(--gold)}
@@ -370,7 +367,6 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
 
 <nav id="snav" aria-label="Navigering">
   <div class="si on" data-t="sec-hero"><span class="si-lbl">Intro</span><div class="si-dot"></div></div>
-  <div class="si" data-t="sec-forr"><span class="si-lbl">Förra gången</span><div class="si-dot"></div></div>
   <div class="si" data-t="sec-profil"><span class="si-lbl">Kanalen</span><div class="si-dot"></div></div>
   <div class="si" data-t="sec-lev"><span class="si-lbl">Leveransen</span><div class="si-dot"></div></div>
   <div class="si" data-t="sec-rk"><span class="si-lbl">Räckvidden</span><div class="si-dot"></div></div>
@@ -403,7 +399,6 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
       <img class="h-ni" src="./nibe-logo.svg" alt="NIBE"/>
     </div>
     <h1 class="h-tagline">Vi installerade er värmepump.<br><em>Nu visar vi den — för 150 000 husägare.</em></h1>
-    <p class="h-sub">Förra samarbetet gav 60 000+ visningar. Samma berättelse, egna kanaler, 164k Instagram + 30k Facebook — och 15 000 kr Meta Ads ovanpå. Vi siktar på 150 000.</p>
     <div class="h-scroll" aria-hidden="true">
       <span>Utforska</span>
       <div class="h-line"></div>
@@ -414,77 +409,32 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
 <div class="gd"></div>
 
 <!-- MARQUEE -->
-<div id="sec-mq" aria-hidden="true">
-  <div class="mq-track">
-    <div class="mq-item"><span class="mq-t g">150 000 visningar</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">3 Reels · 6 Stories · 3 veckor</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Villa Sjövik × NIBE 2026</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Äkta installation. Äkta berättelse.</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">2,5× mer räckvidd än 2025</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Villa Sjövik producerar allt</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">164k Instagram · 30k Facebook</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Berättelsen fortsätter</span><div class="mq-dot"></div></div>
-    <!-- duplicate -->
-    <div class="mq-item"><span class="mq-t g">150 000 visningar</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">3 Reels · 6 Stories · 3 veckor</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">Villa Sjövik × NIBE 2026</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Äkta installation. Äkta berättelse.</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">2,5× mer räckvidd än 2025</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Villa Sjövik producerar allt</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t g">164k Instagram · 30k Facebook</span><div class="mq-dot"></div></div>
-    <div class="mq-item"><span class="mq-t">Berättelsen fortsätter</span><div class="mq-dot"></div></div>
+<div id="sec-mq">
+  <div class="mq-head rv">
+    <p class="mq-lbl">Tidigare samarbeten</p>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/lexington.png" alt="Lexington" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/segway.png" alt="Segway" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/nuura.png" alt="Nuura" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/mille_notti.avif" alt="Mille Notti" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/tinekhome.jpg" alt="TineK Home" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/markslojd.avif" alt="Markslöjd" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/vedum.png" alt="Vedum" class="ticker-logo"></div>
+      <div class="ticker-item"><img src="https://villasjovik.github.io/velux/logos/husqvarna.jpg" alt="Husqvarna" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/lexington.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/segway.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/nuura.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/mille_notti.avif" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/tinekhome.jpg" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/markslojd.avif" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/vedum.png" alt="" class="ticker-logo"></div>
+      <div class="ticker-item" aria-hidden="true"><img src="https://villasjovik.github.io/velux/logos/husqvarna.jpg" alt="" class="ticker-logo"></div>
+    </div>
   </div>
 </div>
 
-<div class="gd"></div>
-
-<!-- ══ FÖRRA SAMARBETET ══════════════════════════════ -->
-<section id="sec-forr">
-  <div class="forr-orb forr-orb-1" aria-hidden="true"></div>
-  <div class="forr-orb forr-orb-2" aria-hidden="true"></div>
-  <div class="forr-inner">
-    <p class="sec-lbl rv">Vintern 2025 — vi samarbetade redan</p>
-    <h2 class="sec-h2 ws rv">Ni producerade. Vi publicerade.<br><em>60 000+ visningar.</em></h2>
-    <div class="res-wrap">
-      <div class="res-grid">
-        <div class="rc rv d1">
-          <p class="rc-v"><span class="cu" data-v="30">0</span>k</p>
-          <p class="rc-lbl">visningar</p>
-          <p class="rc-sub">Video 1<br>@villasjovik</p>
-        </div>
-        <div class="rc rv d2">
-          <p class="rc-v"><span class="cu" data-v="20">0</span>k</p>
-          <p class="rc-lbl">visningar</p>
-          <p class="rc-sub">Video 2 — Reel<br>@villasjovik</p>
-        </div>
-        <div class="rc rv d3">
-          <p class="rc-v"><span class="cu" data-v="10">0</span>k</p>
-          <p class="rc-lbl">visningar</p>
-          <p class="rc-sub">Bildkarusell<br>@villasjovik</p>
-        </div>
-      </div>
-      <div class="res-total rv">
-        <span>Totalt på Instagram</span>
-        <strong>~60 000+ visningar</strong>
-      </div>
-    </div>
-
-    <div class="forr-insight rv">
-      <div class="fi fi-left">
-        <p class="fi-label">Slutsatsen</p>
-        <h4>Carins kanaler är rätt plattform för NIBE.</h4>
-        <p>De tre Reelarna publicerade på @villasjovik samlade totalt 60 000+ visningar organiskt — utan annonsbudget. Innehållet landade bra för att det var äkta: en riktig installation, i ett riktigt hem, berättad av någon publiken litar på.</p>
-      </div>
-      <div class="fi fi-right">
-        <p class="fi-label">Vad vi gör annorlunda nu</p>
-        <h4>Villa Sjövik producerar och redigerar allt.</h4>
-        <p>Förra gången koordinerade NIBE ett externt filmteam och filmade installatörerna. Den här gången tar Villa Sjövik hela produktionen — ni levererar värmepumpen och annonsbudgeten. Vi levererar tre skräddarsydda videos, redigerade och klara för publicering.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gd"></div>
 
 <!-- ══ PROFIL ════════════════════════════════════════ -->
 <section id="sec-profil">
@@ -640,10 +590,10 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
     <h2 class="sec-h2 ws rv" style="text-align:center">Ni levererar pumpen.<br><em>Vi levererar resten.</em></h2>
     <div class="price-box rv">
       <p class="price-total-lbl">Kontant investering</p>
-      <p class="price-total">45 000 <span class="price-unit">kr exkl. moms</span></p>
+      <p class="price-total">50 000 <span class="price-unit">kr exkl. moms</span></p>
       <div class="price-breakdown">
         <div class="pb">
-          <span class="pb-num">30 000 kr</span>
+          <span class="pb-num">35 000 kr</span>
           <p class="pb-lbl">Arvode<br>produktion</p>
         </div>
         <div class="pb">
@@ -665,7 +615,7 @@ pointer-events:none;animation:haloPulse 4s ease-in-out infinite}
       </div>
       <div class="guarantee-bar">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        <p>Vi siktar på <span>minst 150 000 visningar</span> — 2,5× mer räckvidd än 2025.</p>
+        <p>Vi siktar på <span>minst 150 000 visningar</span> — 2,5× mer räckvidd än förra kampanjen.</p>
       </div>
     </div>
   </div>
@@ -784,16 +734,14 @@ document.querySelectorAll('.lc,.gc,.rc,.fi').forEach(card=>{
 });
 
 /* SPOTLIGHT */
-['sec-profil','sec-forr'].forEach(id=>{
-  const el=document.getElementById(id);
-  if(!el) return;
-  const base=id==='sec-profil'?'var(--bg2)':'var(--brn)';
-  el.addEventListener('mousemove',e=>{
-    const r=e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.background=`radial-gradient(circle 600px at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(0,122,62,.06), transparent 70%), ${base}`;
+const spotEl=document.getElementById('sec-profil');
+if(spotEl){
+  spotEl.addEventListener('mousemove',e=>{
+    const r=spotEl.getBoundingClientRect();
+    spotEl.style.background=`radial-gradient(circle 600px at ${e.clientX-r.left}px ${e.clientY-r.top}px, rgba(0,122,62,.06), transparent 70%), var(--bg2)`;
   });
-  el.addEventListener('mouseleave',e=>{e.currentTarget.style.background=''});
-});
+  spotEl.addEventListener('mouseleave',()=>{spotEl.style.background=''});
+}
 
 /* COUNT-UP with punch */
 const cuObs=new IntersectionObserver(entries=>{
@@ -832,7 +780,7 @@ const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInters
 document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
 
 /* SIDENAV */
-const sections=['sec-hero','sec-forr','sec-profil','sec-lev','sec-rk','sec-pr','sec-cta'];
+const sections=['sec-hero','sec-profil','sec-lev','sec-rk','sec-pr','sec-cta'];
 const siItems=document.querySelectorAll('.si');
 siItems.forEach(i=>i.addEventListener('click',()=>{const t=document.getElementById(i.dataset.t);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})}));
 sections.forEach((id,i)=>{
